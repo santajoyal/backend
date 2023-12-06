@@ -13,7 +13,7 @@ app.use(
   cors({
     // origin: "http://localhost:3000",
     
-    origin: "https://keen-tapioca-cd7ccd.netlify.app/",
+    origin: "*",
   })
 );
 

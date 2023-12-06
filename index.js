@@ -61,7 +61,7 @@ app.post("/user/login", async (req, res) => {
       const compare = await bcrypt.compare(req.body.password, user.password);
       if (compare) {
         const token = jwt.sign({ _id: user._id }, jwt_secret, {
-          expiresIn: "10m",
+          expiresIn: "2m",
         });
         res.json({ message: "sucess", token });
       } else {
@@ -71,12 +71,12 @@ app.post("/user/login", async (req, res) => {
       res.status(404).json({ message: "Incorrect username/password" });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 });
 
 //create
-app.post("/students", authorize, async (req, res) => {
+app.post("/student", authorize, async (req, res) => {
   try {
     const connection = await mongoclient.connect(URL);
     const db = connection.db("student-crud");

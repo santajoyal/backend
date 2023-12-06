@@ -12,7 +12,7 @@ const jwt_secret = process.env.jwt_secret;
 app.use(
   cors({
     // origin: "http://localhost:3000",
-    // origin: "https://spiffy-hotteok-37aa4a.netlify.app",
+    
     origin: "https://keen-tapioca-cd7ccd.netlify.app/",
   })
 );
